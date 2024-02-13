@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Orders</title>
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/5.3/examples/cover/cover.css">
+</head>
+<body>
+<h2>Список заказов</h2>
+<table>
+    <thead>
+    <th>OrderUID</th>
+    <th>TrackNumber</th>
+    <th>Entry</th>
+    <th>Locale</th>
+    <th>InternalSignature</th>
+    <th>CustomerID</th>
+    <th>DeliveryService</th>
+    <th>Shardkey</th>
+    <th>SmID</th>
+    <th>DateCreated</th>
+    <th>OofShard</th>
+    <th>Items</th>
+    </thead>
+    {{range .orders }}
+    <tr>
+        <td>{{.OrderUID}}</td>
+        <td>{{.TrackNumber}}</td>
+        <td>{{.Entry}}</td>
+        <td>{{.Locale}}</td>
+        <td>{{.InternalSignature}}</td>
+        <td>{{.CustomerID}}</td>
+        <td>{{.DeliveryService}}</td>
+        <td>{{.Shardkey}}</td>
+        <td>{{.SmID}}</td>
+        <td>{{.DateCreated}}</td>
+        <td>{{.OofShard}}</td>
+        <td>{{range .Items }} {{.Name}} {{end}}</td>
+    </tr>
+    {{end}}
+</table>
+</body>
+</html>
